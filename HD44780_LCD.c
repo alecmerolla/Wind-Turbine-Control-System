@@ -1,5 +1,9 @@
 //HD44780 Codey Codes
 
+//This code covers basic functionality of the HD44780 LCD.
+//Functions have been written for sending characters, instructions, strings and initialization.
+//This library is specific to the atmega328p
+
 #define F_CPU 16000000UL  //Clock speed of atmega328p
 #include <avr/io.h>
 #include <util/delay.h> //library for delays
