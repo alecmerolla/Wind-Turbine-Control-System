@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.1.3">
+<eagle version="9.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -10717,12 +10717,66 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <text x="-2.54" y="-2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="PE" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 </symbol>
+<symbol name="+5V" urn="urn:adsk.eagle:symbol:26929/1" library_version="1">
+<wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
+<text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="+5V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="PE" urn="urn:adsk.eagle:component:26969/1" prefix="PE" library_version="1">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="M" symbol="PE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="+5V" urn="urn:adsk.eagle:component:26963/1" prefix="P+" library_version="1">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="+5V" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="supply2" urn="urn:adsk.eagle:library:372">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+Please keep in mind, that these devices are necessary for the
+automatic wiring of the supply signals.&lt;p&gt;
+The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="+05V" urn="urn:adsk.eagle:symbol:26987/1" library_version="2">
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="0" y1="0.635" x2="0" y2="1.905" width="0.1524" layer="94"/>
+<circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
+<text x="-1.905" y="3.175" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="+5V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="+5V" urn="urn:adsk.eagle:component:27032/1" prefix="SUPPLY" library_version="2">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="+5V" symbol="+05V" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -10744,96 +10798,99 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 </class>
 </classes>
 <parts>
-<part name="B1" library="pololu" deviceset="POLOLU_1183" device=""/>
-<part name="U1" library="SparkFun-IC-Microcontroller" deviceset="ATMEGA328P_PDIP" device="" value="328P"/>
+<part name="A988" library="pololu" deviceset="POLOLU_1183" device=""/>
+<part name="U1" library="SparkFun-IC-Microcontroller" deviceset="ATMEGA328P_PDIP" device="" value="     Atmega328p"/>
 <part name="IC1" library="v-reg-3" deviceset="LM2576" device="S"/>
-<part name="S1" library="switch" library_urn="urn:adsk.eagle:library:380" deviceset="TL36YO" device="" package3d_urn="urn:adsk.eagle:package:27747/1"/>
+<part name="CONTROL" library="switch" library_urn="urn:adsk.eagle:library:380" deviceset="TL36YO" device="" package3d_urn="urn:adsk.eagle:package:27747/1"/>
 <part name="D1" library="_mod_diode" deviceset="1N581*" device="" technology="7-B"/>
 <part name="X1" library="tango" deviceset="PN61729" device=""/>
-<part name="U$1" library="tango" deviceset="RESISTOR" device=""/>
 <part name="C1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-US" device="050-045X075" package3d_urn="urn:adsk.eagle:package:26165/1" value="100u"/>
 <part name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0402" package3d_urn="urn:adsk.eagle:package:26058/1" value="220"/>
 <part name="L1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="L-US" device="L2012C" package3d_urn="urn:adsk.eagle:package:25925/1" value="100u"/>
 <part name="PE1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="PE" device=""/>
 <part name="LED1" library="tango" deviceset="LED" device=""/>
-<part name="U$2" library="tango" deviceset="-CON2" device=""/>
-<part name="U$3" library="tango" deviceset="-CON2" device=""/>
+<part name="+12V" library="tango" deviceset="-CON2" device=""/>
+<part name="FOR_ON_OFF_SIGNAL" library="tango" deviceset="-CON2" device=""/>
 <part name="C2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-US" device="050-045X075" package3d_urn="urn:adsk.eagle:package:26165/1" value="1000u"/>
+<part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="+5V" device=""/>
+<part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="C3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="C-US" device="050-045X075" package3d_urn="urn:adsk.eagle:package:26165/1" value="100u"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="B1" gate="G$1" x="144.78" y="73.66">
-<attribute name="VALUE" x="137.922" y="55.88" size="1.778" layer="96"/>
-<attribute name="NAME" x="140.716" y="100.076" size="1.778" layer="95" rot="R180"/>
+<instance part="A988" gate="G$1" x="162.56" y="20.32">
+<attribute name="VALUE" x="155.702" y="2.54" size="1.778" layer="96"/>
+<attribute name="NAME" x="161.036" y="44.196" size="1.778" layer="95"/>
 </instance>
-<instance part="U1" gate="U1" x="73.66" y="99.06">
-<attribute name="NAME" x="55.88" y="127.762" size="1.778" layer="95"/>
-<attribute name="VALUE" x="55.88" y="60.96" size="1.778" layer="96"/>
+<instance part="U1" gate="U1" x="106.68" y="40.64">
+<attribute name="VALUE" x="99.06" y="71.12" size="1.778" layer="96"/>
 </instance>
-<instance part="IC1" gate="A" x="10.16" y="45.72"/>
-<instance part="S1" gate="BEF1" x="5.08" y="20.32" rot="MR270"/>
-<instance part="D1" gate="G$1" x="27.94" y="25.4" rot="R90"/>
-<instance part="X1" gate="G$1" x="60.96" y="27.94"/>
-<instance part="C1" gate="G$1" x="-7.62" y="40.64" smashed="yes">
+<instance part="IC1" gate="A" x="10.16" y="45.72">
+<attribute name="NAME" x="2.54" y="54" size="1.778" layer="95"/>
+<attribute name="VALUE" x="2.54" y="35.56" size="1.778" layer="96"/>
+</instance>
+<instance part="CONTROL" gate="BEF1" x="5.08" y="20.32" rot="MR270">
+<attribute name="NAME" x="7.62" y="15.24" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="7.62" y="12.7" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="D1" gate="G$1" x="27.94" y="25.4" rot="R90">
+<attribute name="NAME" x="26.035" y="23.114" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="33.909" y="20.574" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="X1" gate="G$1" x="63.5" y="27.94">
+<attribute name="NAME" x="63.5" y="36.83" size="1.778" layer="95"/>
+<attribute name="VALUE" x="63.5" y="20.32" size="1.778" layer="96"/>
+</instance>
+<instance part="C1" gate="G$1" x="-7.62" y="40.64">
 <attribute name="NAME" x="-11.176" y="42.545" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-14.224" y="36.449" size="1.778" layer="96"/>
 </instance>
-<instance part="R1" gate="G$1" x="50.8" y="33.02" rot="R270"/>
-<instance part="L1" gate="G$1" x="35.56" y="45.72" rot="R90"/>
-<instance part="PE1" gate="M" x="15.24" y="5.08"/>
-<instance part="LED1" gate="G$1" x="50.8" y="17.78"/>
-<instance part="U$2" gate="G$1" x="-22.86" y="43.18"/>
-<instance part="U$3" gate="G$1" x="-22.86" y="22.86"/>
-<instance part="C2" gate="G$1" x="43.18" y="22.86" smashed="yes">
+<instance part="R1" gate="G$1" x="50.8" y="33.02" rot="R270">
+<attribute name="NAME" x="54.8386" y="36.83" size="1.778" layer="95"/>
+<attribute name="VALUE" x="55.118" y="34.29" size="1.778" layer="96"/>
+</instance>
+<instance part="L1" gate="G$1" x="35.56" y="45.72" rot="R90">
+<attribute name="NAME" x="40.64" y="44.45" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="40.64" y="49.53" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="PE1" gate="M" x="15.24" y="5.08">
+<attribute name="VALUE" x="12.7" y="2.54" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED1" gate="G$1" x="50.8" y="17.78">
+<attribute name="NAME" x="59.182" y="19.558" size="1.778" layer="95" rot="R180"/>
+</instance>
+<instance part="+12V" gate="G$1" x="-22.86" y="43.18">
+<attribute name="NAME" x="-28.702" y="42.418" size="1.778" layer="95" rot="R180"/>
+</instance>
+<instance part="FOR_ON_OFF_SIGNAL" gate="G$1" x="-22.86" y="22.86">
+<attribute name="NAME" x="-26.162" y="17.018" size="1.778" layer="95" rot="R180"/>
+</instance>
+<instance part="C2" gate="G$1" x="43.18" y="22.86">
 <attribute name="NAME" x="39.624" y="24.765" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="36.576" y="18.669" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY1" gate="+5V" x="68.58" y="76.2">
+<attribute name="VALUE" x="66.675" y="79.375" size="1.778" layer="96"/>
+</instance>
+<instance part="P+1" gate="1" x="73.66" y="45.72">
+<attribute name="VALUE" x="71.12" y="45.72" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C3" gate="G$1" x="200.66" y="40.64">
+<attribute name="NAME" x="201.676" y="41.275" size="1.778" layer="95"/>
+<attribute name="VALUE" x="201.676" y="36.449" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="N$1" class="0">
-<segment>
-<pinref part="B1" gate="G$1" pin="!RESET"/>
-<wire x1="124.46" y1="68.58" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="68.58" x2="119.38" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="B1" gate="G$1" pin="!SLEEP"/>
-<wire x1="119.38" y1="66.04" x2="124.46" y2="66.04" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="U1" gate="U1" pin="PD4(XCK/T0)"/>
-<pinref part="B1" gate="G$1" pin="DIR"/>
-<wire x1="96.52" y1="91.44" x2="111.76" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="60.96" x2="124.46" y2="60.96" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="U1" gate="U1" pin="PD5(T1)"/>
-<pinref part="B1" gate="G$1" pin="STEP"/>
-<wire x1="96.52" y1="88.9" x2="106.68" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="63.5" x2="124.46" y2="63.5" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
-<segment>
-<pinref part="U1" gate="U1" pin="PD6(AIN0)"/>
-<pinref part="B1" gate="G$1" pin="!ENABLE"/>
-<wire x1="96.52" y1="86.36" x2="121.92" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="73.66" x2="124.46" y2="78.74" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$5" class="0">
 <segment>
 <pinref part="IC1" gate="A" pin="VIN"/>
-<wire x1="0" y1="50.8" x2="-5.08" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="1"/>
-<wire x1="-5.08" y1="50.8" x2="-7.62" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="0" y1="50.8" x2="-7.62" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="+12V" gate="G$1" pin="1"/>
 <wire x1="-7.62" y1="50.8" x2="-20.32" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="50.8" x2="-20.32" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
@@ -10843,9 +10900,9 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 </net>
 <net name="PE" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="2"/>
+<pinref part="+12V" gate="G$1" pin="2"/>
 <wire x1="-20.32" y1="40.64" x2="-20.32" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="1"/>
+<pinref part="FOR_ON_OFF_SIGNAL" gate="G$1" pin="1"/>
 <wire x1="-20.32" y1="22.86" x2="-20.32" y2="7.62" width="0.1524" layer="91"/>
 <junction x="-20.32" y="22.86"/>
 <pinref part="PE1" gate="M" pin="PE"/>
@@ -10854,7 +10911,7 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <wire x1="-7.62" y1="7.62" x2="15.24" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="-7.62" y1="35.56" x2="-7.62" y2="33.02" width="0.1524" layer="91"/>
 <junction x="-7.62" y="7.62"/>
-<pinref part="S1" gate="BEF1" pin="S"/>
+<pinref part="CONTROL" gate="BEF1" pin="S"/>
 <wire x1="-7.62" y1="33.02" x2="-7.62" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="-7.62" y1="17.78" x2="-7.62" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="0" y1="17.78" x2="-7.62" y2="17.78" width="0.1524" layer="91"/>
@@ -10868,8 +10925,8 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <pinref part="X1" gate="G$1" pin="4"/>
 <wire x1="27.94" y1="7.62" x2="43.18" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="7.62" x2="50.8" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="7.62" x2="58.42" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="7.62" x2="58.42" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="7.62" x2="60.96" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="7.62" x2="60.96" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="27.94" y1="22.86" x2="27.94" y2="7.62" width="0.1524" layer="91"/>
 <junction x="27.94" y="7.62"/>
@@ -10879,13 +10936,25 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="43.18" y1="17.78" x2="43.18" y2="7.62" width="0.1524" layer="91"/>
 <junction x="43.18" y="7.62"/>
+<pinref part="U1" gate="U1" pin="GND"/>
+<wire x1="86.36" y1="7.62" x2="68.58" y2="7.62" width="0.1524" layer="91"/>
+<junction x="60.96" y="7.62"/>
+<pinref part="A988" gate="G$1" pin="GND1"/>
+<wire x1="68.58" y1="7.62" x2="60.96" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="40.64" x2="139.7" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="40.64" x2="139.7" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="58.42" x2="187.96" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="58.42" x2="187.96" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="-5.08" x2="68.58" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="-5.08" x2="68.58" y2="7.62" width="0.1524" layer="91"/>
+<junction x="68.58" y="7.62"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="2"/>
+<pinref part="FOR_ON_OFF_SIGNAL" gate="G$1" pin="2"/>
 <wire x1="-20.32" y1="20.32" x2="-10.16" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="S1" gate="BEF1" pin="O"/>
+<pinref part="CONTROL" gate="BEF1" pin="O"/>
 <wire x1="-10.16" y1="20.32" x2="-7.62" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="-7.62" y1="22.86" x2="0" y2="22.86" width="0.1524" layer="91"/>
 </segment>
@@ -10893,11 +10962,10 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <net name="N$7" class="0">
 <segment>
 <pinref part="IC1" gate="A" pin="OFF"/>
-<wire x1="0" y1="45.72" x2="0" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="0" y1="35.56" x2="0" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="0" y1="45.72" x2="0" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="0" y1="30.48" x2="20.32" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="30.48" x2="20.32" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="S1" gate="BEF1" pin="P"/>
+<pinref part="CONTROL" gate="BEF1" pin="P"/>
 <wire x1="20.32" y1="20.32" x2="10.16" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -10917,8 +10985,8 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <wire x1="22.86" y1="50.8" x2="43.18" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="X1" gate="G$1" pin="1"/>
 <wire x1="43.18" y1="50.8" x2="50.8" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="50.8" x2="58.42" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="50.8" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="50.8" x2="60.96" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="50.8" x2="60.96" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="50.8" y1="38.1" x2="50.8" y2="50.8" width="0.1524" layer="91"/>
 <junction x="50.8" y="50.8"/>
@@ -10935,6 +11003,101 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="LED1" gate="G$1" pin="ANODE"/>
 <wire x1="50.8" y1="27.94" x2="50.8" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="U1" gate="U1" pin="PD4(XCK/T0)"/>
+<wire x1="129.54" y1="33.02" x2="134.62" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="A988" gate="G$1" pin="DIR"/>
+<wire x1="134.62" y1="33.02" x2="134.62" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="7.62" x2="142.24" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="U1" gate="U1" pin="PD5(T1)"/>
+<wire x1="129.54" y1="30.48" x2="137.16" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="30.48" x2="137.16" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="A988" gate="G$1" pin="STEP"/>
+<wire x1="137.16" y1="10.16" x2="142.24" y2="10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="U1" gate="U1" pin="PD6(AIN0)"/>
+<wire x1="129.54" y1="27.94" x2="139.7" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="27.94" x2="139.7" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="A988" gate="G$1" pin="!ENABLE"/>
+<wire x1="139.7" y1="25.4" x2="142.24" y2="25.4" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="+5V" class="0">
+<segment>
+<pinref part="U1" gate="U1" pin="VCC"/>
+<pinref part="A988" gate="G$1" pin="VDD"/>
+<wire x1="81.28" y1="58.42" x2="86.36" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="35.56" x2="137.16" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="35.56" x2="137.16" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="81.28" x2="81.28" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="81.28" x2="81.28" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="+5V" pin="+5V"/>
+<wire x1="68.58" y1="73.66" x2="68.58" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="58.42" x2="81.28" y2="58.42" width="0.1524" layer="91"/>
+<junction x="81.28" y="58.42"/>
+</segment>
+<segment>
+<pinref part="P+1" gate="1" pin="+5V"/>
+<wire x1="66.04" y1="35.56" x2="73.66" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="35.56" x2="73.66" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TO_STEPPER_MOTOR(BLK)" class="0">
+<segment>
+<pinref part="A988" gate="G$1" pin="2B"/>
+<wire x1="180.34" y1="20.32" x2="198.12" y2="20.32" width="0.1524" layer="91"/>
+<label x="200.66" y="20.32" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TO_STEPPER_MOTOR(GRN)" class="0">
+<segment>
+<pinref part="A988" gate="G$1" pin="2A"/>
+<wire x1="180.34" y1="17.78" x2="198.12" y2="17.78" width="0.1524" layer="91"/>
+<label x="200.66" y="17.78" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TO_STEPPER_MOTOR(RED)" class="0">
+<segment>
+<pinref part="A988" gate="G$1" pin="1A"/>
+<wire x1="180.34" y1="15.24" x2="198.12" y2="15.24" width="0.1524" layer="91"/>
+<label x="200.66" y="15.24" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TO_STEPPER_MOTOR(BLU)" class="0">
+<segment>
+<pinref part="A988" gate="G$1" pin="1B"/>
+<wire x1="180.34" y1="12.7" x2="198.12" y2="12.7" width="0.1524" layer="91"/>
+<label x="200.66" y="12.7" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="A988" gate="G$1" pin="V_MOT"/>
+<wire x1="182.88" y1="45.72" x2="182.88" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="25.4" x2="180.34" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="45.72" x2="200.66" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="45.72" x2="200.66" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="200.66" y1="35.56" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="33.02" x2="190.5" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="33.02" x2="190.5" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="22.86" x2="180.34" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="A988" gate="G$1" pin="GND_SUPP"/>
 </segment>
 </net>
 </nets>
