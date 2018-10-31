@@ -6,6 +6,7 @@
 #define ledPin 13
 
 //Global Vars
+//Change Red,green,blue for different % color out of 254
 volatile int red = 100;
 volatile int green = 150;
 volatile int blue = 200;
