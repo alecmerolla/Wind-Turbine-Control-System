@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.1">
+<eagle version="9.1.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -10766,6 +10766,11 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <text x="-2.54" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
 <pin name="+5V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
+<symbol name="GND" urn="urn:adsk.eagle:symbol:26925/1" library_version="1">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="PE" urn="urn:adsk.eagle:component:26969/1" prefix="PE" library_version="1">
@@ -10785,6 +10790,19 @@ Source: www.sumida.com/products/pdf/CEP125.pdf</description>
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="+5V" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GND" urn="urn:adsk.eagle:component:26954/1" prefix="GND" library_version="1">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="GND" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -11449,6 +11467,123 @@ In this library the device names are the same as the pin names of the symbols, t
 </deviceset>
 </devicesets>
 </library>
+<library name="arduino_jw">
+<description>&lt;font size="+1"&gt;&lt;b&gt;Jim's Arduino Header Library&lt;/b&gt;&lt;/font&gt;
+
+&lt;p&gt;This library contains custom connectors for the Arduino Uno R3 for use in making custom shields.  Please feel free to use and modify as you like.&lt;/p&gt;
+
+&lt;p&gt; No guarantees!  This is my first attempt to make custom parts in Eagle and they're simple enough, but I haven't actually fabricated a board using them so use at your own risk.&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;~Jim Watts&lt;/i&gt;&lt;br&gt;18-March-2015&lt;/p&gt;</description>
+<packages>
+<package name="CONN-2X03">
+<description>2x3 DIP header with pin 1 marked by a square pad.</description>
+<pad name="1" x="0" y="0" drill="1.2" diameter="1.8288" shape="square" rot="R270"/>
+<pad name="3" x="0" y="-2.54" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
+<pad name="5" x="0" y="-5.08" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
+<pad name="6" x="2.54" y="-5.08" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
+<pad name="4" x="2.54" y="-2.54" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
+<pad name="2" x="2.54" y="0" drill="1.2" diameter="1.8288" shape="octagon" rot="R270"/>
+<wire x1="1.27" y1="0.635" x2="1.905" y2="1.27" width="0.127" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="3.175" y2="1.27" width="0.127" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="3.81" y2="0.635" width="0.127" layer="21"/>
+<wire x1="3.81" y1="0.635" x2="3.81" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-0.635" x2="3.175" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="3.175" y1="-1.27" x2="3.81" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-1.905" x2="3.81" y2="-3.175" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-3.175" x2="3.175" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="3.175" y1="-3.81" x2="3.81" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-4.445" x2="3.81" y2="-5.715" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-5.715" x2="3.175" y2="-6.35" width="0.127" layer="21"/>
+<wire x1="3.175" y1="-6.35" x2="1.905" y2="-6.35" width="0.127" layer="21"/>
+<wire x1="1.905" y1="-6.35" x2="1.27" y2="-5.715" width="0.127" layer="21"/>
+<wire x1="1.27" y1="-5.715" x2="0.635" y2="-6.35" width="0.127" layer="21"/>
+<wire x1="0.635" y1="-6.35" x2="-0.635" y2="-6.35" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-6.35" x2="-1.27" y2="-5.715" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-5.715" x2="-1.27" y2="-4.445" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-4.445" x2="-0.635" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-3.81" x2="-1.27" y2="-3.175" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-3.175" x2="-1.27" y2="-1.905" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-1.905" x2="-0.635" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-1.27" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-1.27" y2="0.635" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-0.635" y2="1.27" width="0.127" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.127" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="0" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-3.81" x2="0" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="-1.651" y1="0.635" x2="-1.651" y2="-0.635" width="0.127" layer="21"/>
+<text x="-1.27" y="1.905" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.27" y="-8.255" size="1.27" layer="25">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="ISCP">
+<description>&lt;font size="+1"&gt;&lt;b&gt;Arduino ICSP I/O Header Symbol&lt;/b&gt;&lt;/font&gt;</description>
+<wire x1="11.43" y1="0" x2="0" y2="0" width="0.4064" layer="94"/>
+<wire x1="8.89" y1="7.62" x2="10.16" y2="7.62" width="0.6096" layer="94"/>
+<wire x1="8.89" y1="5.08" x2="10.16" y2="5.08" width="0.6096" layer="94"/>
+<wire x1="8.89" y1="2.54" x2="10.16" y2="2.54" width="0.6096" layer="94"/>
+<wire x1="0" y1="17.78" x2="0" y2="0" width="0.4064" layer="94"/>
+<wire x1="11.43" y1="0" x2="11.43" y2="17.78" width="0.4064" layer="94"/>
+<wire x1="0" y1="17.78" x2="11.43" y2="17.78" width="0.4064" layer="94"/>
+<wire x1="8.89" y1="12.7" x2="10.16" y2="12.7" width="0.6096" layer="94"/>
+<wire x1="8.89" y1="10.16" x2="10.16" y2="10.16" width="0.6096" layer="94"/>
+<wire x1="8.89" y1="15.24" x2="10.16" y2="15.24" width="0.6096" layer="94"/>
+<text x="0" y="-2.54" size="1.778" layer="96">ICSP</text>
+<text x="0" y="18.542" size="1.778" layer="95">&gt;NAME</text>
+<pin name="6" x="15.24" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="5" x="15.24" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="4" x="15.24" y="7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="3" x="15.24" y="10.16" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="2" x="15.24" y="12.7" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="15.24" y="15.24" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<text x="7.62" y="15.24" size="1.27" layer="94" align="center-right">MISO</text>
+<text x="7.62" y="12.7" size="1.27" layer="94" align="center-right">+5V</text>
+<text x="7.62" y="10.16" size="1.27" layer="94" align="center-right">SCK</text>
+<text x="7.62" y="7.62" size="1.27" layer="94" align="center-right">MOSI</text>
+<text x="7.62" y="5.08" size="1.27" layer="94" align="center-right">RESET</text>
+<text x="7.62" y="2.54" size="1.27" layer="94" align="center-right">GND</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ARDUINO_CONN-ICSP" prefix="JP" uservalue="yes">
+<description>&lt;font size="+1"&gt;&lt;b&gt;Arduino ICSP I/O Header&lt;/b&gt;&lt;/font&gt;
+
+&lt;p&gt;This is the ICSP I/O header on the Arduino Uno R3.&lt;/p&gt;
+
+&lt;p&gt;This connector is labeled with the following pin assignments:
+&lt;ol&gt;
+&lt;li&gt;MISO&lt;/li&gt;
+&lt;li&gt;+5V&lt;/li&gt;
+&lt;li&gt;SCK&lt;/li&gt;
+&lt;li&gt;MOSI&lt;/li&gt;
+&lt;li&gt;RESET&lt;/li&gt;
+&lt;li&gt;GND&lt;/li&gt;
+&lt;/ol&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;NOTE:&lt;/b&gt; Be sure you install this connector with the correct orientation on your PCB layout.  Pin 1 has a square pad to assist with orientation.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="ISCP" x="-2.54" y="-7.62"/>
+</gates>
+<devices>
+<device name="" package="CONN-2X03">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11480,11 +11615,14 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="WIND_VANE" library="tango" deviceset="-CON3" device=""/>
 <part name="U$1" library="HD44780LCD" deviceset="LCD-HD44780" device="16X2-3-HOLES" technology="3-HOLES"/>
 <part name="ANEMOMETER" library="tango" deviceset="-CON3" device=""/>
-<part name="C4" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="C" device=""/>
-<part name="C5" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="C" device=""/>
+<part name="C4" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="C" device="" value="22pF"/>
+<part name="C5" library="docu-dummy" library_urn="urn:adsk.eagle:library:215" deviceset="C" device="" value="22pF"/>
 <part name="X_1" library="ngspice-simulation" library_urn="urn:adsk.eagle:library:527439" deviceset="GND" device=""/>
 <part name="U$2" library="crystal" deviceset="90SMX" device=""/>
 <part name="X_2" library="ngspice-simulation" library_urn="urn:adsk.eagle:library:527439" deviceset="GND" device=""/>
+<part name="JP1" library="arduino_jw" deviceset="ARDUINO_CONN-ICSP" device=""/>
+<part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11568,11 +11706,13 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="C4" gate="G$1" x="76.2" y="-15.24" smashed="yes"/>
 <instance part="C5" gate="G$1" x="86.36" y="-15.24" smashed="yes"/>
 <instance part="X_1" gate="G$1" x="76.2" y="-22.86" smashed="yes"/>
-<instance part="U$2" gate="G$1" x="81.28" y="-12.7" smashed="yes">
-<attribute name="NAME" x="78.74" y="-10.414" size="1.778" layer="95"/>
-<attribute name="VALUE" x="78.74" y="-16.51" size="1.778" layer="96"/>
-</instance>
+<instance part="U$2" gate="G$1" x="81.28" y="-12.7" smashed="yes"/>
 <instance part="X_2" gate="G$1" x="86.36" y="-22.86" smashed="yes"/>
+<instance part="JP1" gate="G$1" x="114.3" y="-40.64"/>
+<instance part="P+2" gate="1" x="139.7" y="-20.32" smashed="yes">
+<attribute name="VALUE" x="142.24" y="-17.78" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND1" gate="1" x="139.7" y="-45.72"/>
 </instances>
 <busses>
 </busses>
@@ -11886,22 +12026,23 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="160.02" y1="78.74" x2="152.4" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="78.74" x2="152.4" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="50.8" x2="132.08" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="30.48" x2="132.08" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="30.48" x2="132.08" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="U1" gate="U1" pin="PB4(MISO)"/>
+<wire x1="132.08" y1="12.7" x2="132.08" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="10.16" x2="129.54" y2="10.16" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$15" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="DB5"/>
-<wire x1="160.02" y1="76.2" x2="149.86" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="76.2" x2="149.86" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="50.8" x2="139.7" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="40.64" x2="139.7" y2="30.48" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="30.48" x2="139.7" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="15.24" x2="132.08" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="U1" gate="U1" pin="PB5(SCK)"/>
-<wire x1="132.08" y1="7.62" x2="129.54" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="JP1" gate="G$1" pin="1"/>
+<wire x1="129.54" y1="-25.4" x2="132.08" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-25.4" x2="132.08" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="10.16" x2="129.54" y2="10.16" width="0.1524" layer="91"/>
+<junction x="129.54" y="10.16"/>
+<pinref part="JP1" gate="G$1" pin="4"/>
+<wire x1="129.54" y1="-33.02" x2="137.16" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="-33.02" x2="137.16" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="U1" gate="U1" pin="PB3(MOSI/OC2)"/>
+<wire x1="137.16" y1="5.08" x2="137.16" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="12.7" x2="132.08" y2="12.7" width="0.1524" layer="91"/>
+<junction x="132.08" y="12.7"/>
+<wire x1="132.08" y1="12.7" x2="129.54" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$16" class="0">
@@ -11940,6 +12081,48 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <pinref part="X_2" gate="G$1" pin="0"/>
 <wire x1="86.36" y1="-22.86" x2="86.36" y2="-20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="+5V" class="0">
+<segment>
+<pinref part="JP1" gate="G$1" pin="2"/>
+<wire x1="129.54" y1="-27.94" x2="139.7" y2="-27.94" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="-27.94" x2="139.7" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="P+2" gate="1" pin="+5V"/>
+</segment>
+</net>
+<net name="GND" class="0">
+<segment>
+<pinref part="JP1" gate="G$1" pin="6"/>
+<wire x1="129.54" y1="-38.1" x2="139.7" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="-38.1" x2="139.7" y2="-43.18" width="0.1524" layer="91"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<pinref part="JP1" gate="G$1" pin="3"/>
+<wire x1="129.54" y1="-30.48" x2="134.62" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-30.48" x2="134.62" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="5.08" x2="129.54" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="DB5"/>
+<wire x1="160.02" y1="76.2" x2="149.86" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="76.2" x2="149.86" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="50.8" x2="139.7" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="40.64" x2="139.7" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="30.48" x2="139.7" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="15.24" x2="132.08" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="U1" gate="U1" pin="PB5(SCK)"/>
+<wire x1="132.08" y1="7.62" x2="129.54" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="5.08" x2="129.54" y2="7.62" width="0.1524" layer="91"/>
+<junction x="129.54" y="7.62"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="JP1" gate="G$1" pin="5"/>
+<wire x1="129.54" y1="-35.56" x2="160.02" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="-35.56" x2="160.02" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
